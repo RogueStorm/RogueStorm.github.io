@@ -140,10 +140,26 @@
 <!-- PAYPAL BUTTONS -->
 <div class="container text-center pb-5">
      <div id="dvPostage" class="container" style="display: none">
-        <a id="btnPostage" class="btn btn-scarlet visible" href="#">PayPal &raquo;</a><h6>Include Postage</h6>
-    </div>
+       
+        <h5>Include P&amp;P</h5>
+            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="HSE7VPCUHXQVE">
+            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+            </form>
+   
+  </div>
+  
     <div id="dvNoPostage" class="container" style="display: none">
-        <a id="btnNoPostage" class="btn btn-scarlet visible" href="#">PayPal (NP) &raquo;</a><h6>No Postage</h6>
+         <h5>Pick up or Delivery</h5>
+            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="NG7VFLRVSWCNE">
+            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+         </form>
+      
     </div>
 </div>  
 <!-- END PAYPAL BUTTONS -->
