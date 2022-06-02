@@ -41,31 +41,34 @@
    
     
 <script>
-      $(document).ready(function(){
+    
+    $(document).ready(function(){
         checkCookie(); //$("#exampleModal").modal('show');
      });
 	    
 function checkCookie() {
+    
     alert("Check Cookie");
     
-  let  myCookie = getCookie("tcd_biscuit");
-    alert("Cookie " + myCookie);
+  var myCookie = getCookie("tcd_biscuit");
+    
+  alert("Cookie " + myCookie);
   
-if (myCookie != "") {
+    if (myCookie != "") {
       alert("Cookie Exists.");
     // check date of cookie expiration
     //alert("Welcome again " + user);
-  } else {
+        } else {
  
        alert("Cookie does not exist.");
 	  
       	$("#exampleModal").modal('show');
    
-	alert("Setting cookie.");
+	   alert("Setting cookie.");
 	  
         setCookie("tcd_biscuit", "I-Exist!", 30);
       
-  }
+    }
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -85,6 +88,24 @@ function setCookie(cname, cvalue, exdays) {
     
 }
 	  
+function getCookie(cname) {
+    
+  let name = cname + "=";
+    alert("1");
+    alert(name);
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+        alert(name);
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 	  
 </script>
     
