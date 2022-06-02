@@ -222,11 +222,12 @@
                   
    <!-- Cookie Script -->
    <script>
+     
     alert("1. Window Loading");
     window.onload = doCookieCheck("myCookie");
           
-    function setCookie(name,value,days) {
-      alert("Setting Cookie.");
+    //function setCookie(name,value,days) {
+      //alert("Setting Cookie.");
     //var expires = "";
    
     //if (days) {
@@ -235,9 +236,9 @@
         //expires = "; expires=" + date.toUTCString();
     //}
     
-    alert(name + "=" + (value || "")  + expires + "; path=/");
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-}
+    //alert(name + "=" + (value || "")  + expires + "; path=/");
+    //document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+//}
     
 //function eraseCookie(name) {   
    // document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
