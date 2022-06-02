@@ -203,56 +203,67 @@
                   
    <!-- Cookie Script -->
    <script>
-     function setCookie(name,value,days) {
+     
+    alert("0");
+    window.onload = doCookieCheck("myCookie");
+     
+     
+    function setCookie(name,value,days) {
     var expires = "";
+    alert("In Set Cookie.")
     if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days*24*60*60*1000));
         expires = "; expires=" + date.toUTCString();
     }
+    
+    alert(name + "=" + (value || "")  + expires + "; path=/");
+    
     document.cookie = name + "=" + (value || "")  + expires + "; path=/";
 }
-function getCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-        var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-}
-
+    
 function eraseCookie(name) {   
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-
-function cookieConsent() {
-    if (!getCookie('allowCookies')) {
-        $('.toast').toast('show')
+    
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    alert("In Get Cookie.")
+    alert(name);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
     }
-}
-
-$('#btnDeny').click(()=>{
-    eraseCookie('allowCookies')
-    $('.toast').toast('hide')
-})
-
-$('#btnAccept').click(()=>{
-    setCookie('allowCookies','1',7)
-    $('.toast').toast('hide')
-})
-
-// load
-cookieConsent()
-
-// for demo / testing only
-$('#btnReset').click(()=>{
-    // clear cookie to show toast after acceptance
-    eraseCookie('allowCookies')
-    $('.toast').toast('show')
-})
-
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+} 
+    
+function doCookieCheck(cookieName) {
+    alert("In Do Cookie Check.");
+    var myCookie = getCookie(cookieName);
+    alert(myCookie);
+   
+    if (myCookie == null) {
+        // do cookie doesn't exist stuff;
+        alert("Cookie doesn't exist.");
+        setCookie(cookieName,"Exists", 30);
+    }
+    else {
+        alert("Cookie exists.");
+        // do cookie exists stuff
+    }
+}       
      
    </script>
    
