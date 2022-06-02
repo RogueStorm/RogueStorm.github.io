@@ -48,23 +48,23 @@
 	    
 function checkCookie() {
     
-    alert("Check Cookie");
+    //alert("Check Cookie");
     
   var myCookie = getCookie("tcd_biscuit");
     
-  alert("Cookie " + myCookie);
+  //alert("Cookie " + myCookie);
   
     if (myCookie != "") {
-      alert("Cookie Exists.");
+      //alert("Cookie Exists.");
     // check date of cookie expiration
     //alert("Welcome again " + user);
         } else {
  
-       alert("Cookie does not exist.");
+       //alert("Cookie does not exist.");
 	  
       	$("#exampleModal").modal('show');
    
-	   alert("Setting cookie.");
+	  // alert("Setting cookie.");
 	  
         setCookie("tcd_biscuit", "I-Exist!", 30);
       
@@ -73,16 +73,16 @@ function checkCookie() {
 
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
-    alert("Set Cookie Name, Value, Date.");
-    alert("2");
-    alert(cname);
-    alert(cvalue);
-    alert(exdays);
+    //alert("Set Cookie Name, Value, Date.");
+    //alert("2");
+   // alert(cname);
+   // alert(cvalue);
+   // alert(exdays);
     //alert(cname + ";" + cvalue + ";" exdays);
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires="+d.toUTCString();
-    alert("3")
-    alert(cname + "=" + cvalue + ";" + expires + ";path=/");
+    //alert("3")
+   // alert(cname + "=" + cvalue + ";" + expires + ";path=/");
     
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     
@@ -91,8 +91,8 @@ function setCookie(cname, cvalue, exdays) {
 function getCookie(cname) {
     
   let name = cname + "=";
-    alert("1");
-    alert(name);
+    //alert("1");
+    //alert(name);
   let ca = document.cookie.split(';');
   for(let i = 0; i < ca.length; i++) {
     let c = ca[i];
@@ -100,7 +100,7 @@ function getCookie(cname) {
       c = c.substring(1);
     }
     if (c.indexOf(name) == 0) {
-        alert(name);
+        //alert(name);
       return c.substring(name.length, c.length);
     }
   }
