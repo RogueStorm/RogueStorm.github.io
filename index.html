@@ -106,6 +106,7 @@
     </div>
   </div>
 </div>
+    <!-- END OF THE MODAL FORM-->
     
         
   <!-- Marketing messaging and featurettes
@@ -221,10 +222,9 @@
                   
    <!-- Cookie Script -->
    <script>
-     
+    alert("1. Window Loading");
     window.onload = doCookieCheck("myCookie");
-     
-     
+          
     function setCookie(name,value,days) {
     //var expires = "";
    
@@ -269,8 +269,7 @@ function getCookie(name) {
 function doCookieCheck(cookieName) {
    
     var myCookie = getCookie(cookieName);
-    alert("1");
-    alert(myCookie);
+    alert("2. " + myCookie);
    
     if (myCookie == null) {
         // do cookie doesn't exist stuff;
@@ -278,15 +277,16 @@ function doCookieCheck(cookieName) {
         var mForm = document.getElementById("exampleModal");
         
         alert("Just about to open the form");
-        alert(mForm.id);
-      
+     
         mform.style.display = block;
         setCookie(cookieName,"Exists", 30);
     }
-    //else {
+    else {
+      
+       var mForm = document.getElementById("exampleModal");
+       mform.style.display = block;
         
-        // do cookie exists stuff
-   // }
+   }
 }       
      
    </script>
