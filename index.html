@@ -84,8 +84,13 @@
 </nav>       
 <!-- END NAVBAR -->
     
+    <div class="modal fade" id="exampleModal">
+      <h1>Some Text</h1>
+    </div
+    
+    
 <!-- START OF MODAL COOKIE FORM-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -103,7 +108,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
     
     
     
@@ -272,7 +277,7 @@ function doCookieCheck(cookieName) {
     if (myCookie == null) {
         // do cookie doesn't exist stuff;
         // Open Form 
-        const mForm = document.getElementById('exampleModal');
+        var mForm = document.getElementById("exampleModal");
         alert("Just about to open the form");
         mform.style.display = block;
         setCookie(cookieName,"Exists", 30);
