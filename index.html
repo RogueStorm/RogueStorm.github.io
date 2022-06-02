@@ -86,7 +86,8 @@
     
 <!-- START COOKIE SCRIPT -->
    <script>  
-  var modal = document.getElementById("exampleModal");
+  var fModal = document.getElementById('exampleModal');
+  var vis = fModal.style;
     
 // Get the button that opens the modal
 //var btn = document.getElementById("myBtn");
@@ -164,14 +165,13 @@ function doCookieCheck(cookieName) {
     if (myCookie == null) {
         // do cookie doesn't exist stuff;
         alert("Cookie doesn't exist.");
-        setCookie(cookieName,"Exists", 60);
-        
-        var mForm = document.getElementById("exampleModal");
-        mform.style.display = "block";
+        setCookie(cookieName,"Exists", 30);
+        vis.display = 'block';
       
     }
     else {
         alert("Cookie exists.");
+        vis.display = 'block';
         // do cookie exists stuff
     }
 }
