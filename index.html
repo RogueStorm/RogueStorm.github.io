@@ -85,20 +85,22 @@
 <!-- END NAVBAR -->
     
 <!-- START COOKIE SCRIPT -->
-   <script>  
-  var fModal = document.getElementById('exampleModal');
-  var vis = fModal.style;
+  <script>  
+    var fModal = document.getElementById('exampleModal');
+    var vis = fModal.style;
     
 // Get the button that opens the modal
 //var btn = document.getElementById("myBtn");
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == fModal) {
+    fModal.style.display = "none";
   }
 }
+     
+     
    var loadModal = function() {
-    modal.style.display = "block";
+    vis.display = "block";
     };
         
     //window.onload = loadModal;
@@ -106,12 +108,12 @@ window.onclick = function(event) {
     alert("0");
     window.onload = doCookieCheck("myCookie");
     
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
-    modal.style.display = "none";
+    fModal.style.display = "none";
     }
     
     
@@ -166,13 +168,15 @@ function doCookieCheck(cookieName) {
         // do cookie doesn't exist stuff;
         alert("Cookie doesn't exist.");
         setCookie(cookieName,"Exists", 30);
-        vis.display = 'block';
+        //vis.display = 'block';
+      loadModal();
       
     }
     else {
         alert("Cookie exists.");
-        vis.display = 'block';
+        //vis.display = 'block';
         // do cookie exists stuff
+      loadModal();
     }
 }
     
